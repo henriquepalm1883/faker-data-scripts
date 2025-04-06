@@ -1,11 +1,11 @@
 CREATE TABLE veiculos (
-    idveiculos INT PRIMARY KEY AUTO_INCREMENT,
+    idveiculos SERIAL PRIMARY KEY,
     modelo_veiculos VARCHAR(45) NOT NULL,
     fabricante_veiculo VARCHAR(45) NOT NULL
 );
 
 CREATE TABLE tipo_veiculo (
-    idvalores INT PRIMARY KEY AUTO_INCREMENT,
+    idvalores SERIAL PRIMARY KEY,
     tipo_veiculo VARCHAR(45) NOT NULL,
     valor DECIMAL(4,2) NOT NULL,
     veiculos_idveiculos INT NOT NULL,
@@ -13,15 +13,15 @@ CREATE TABLE tipo_veiculo (
 );
 
 CREATE TABLE praca (
-    id_praca INT PRIMARY KEY AUTO_INCREMENT,
+    id_praca SERIAL PRIMARY KEY,
     nome_praca VARCHAR(45) NOT NULL,
     nome_cidade VARCHAR(45) NOT NULL,
     nome_estado VARCHAR(45) NOT NULL
 );
 
 CREATE TABLE ticket (
-    id_ticket INT PRIMARY KEY AUTO_INCREMENT,
-    data DATETIME NOT NULL,
+    id_ticket SERIAL PRIMARY KEY,
+    data TIMESTAMP NOT NULL,
     tipo_veiculo_idvalores INT NOT NULL,
     valor_ocorrencia DECIMAL(4,2) NOT NULL,
     praca_id_praca INT NOT NULL,
